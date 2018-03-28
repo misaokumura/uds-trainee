@@ -1,0 +1,141 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 15</title>
+<style>
+	body {
+  		white-space: pre;
+	}
+</style>
+</head>
+
+<body>
+	<p>
+		15. Escreva um código que atenda os sequintes requisitos:
+
+		15.1. Possua um objeto cliente, com as propriedades:
+
+		15.1.1. Nome.
+		15.1.2. Sexo.
+		15.1.3. Data de nascimento.
+		15.1.4. Endereço (cep, logradouro, número, complemento, bairro, cidade, estado).
+		15.1.5. Deve possuir um método que alerte todas as informações do cliente.
+
+
+		15.2. Possua um objeto produto com as propriedades:
+
+		15.2.1. Titulo.
+		15.2.2. Descrição.
+		15.2.3. Valor.
+		15.2.4. Deve possuir um método que alerte seu nome e valor.
+
+		15.3. Possua um objeto venda com as propriedades:
+
+		15.3.1. Data.
+		15.3.2. Cliente.
+		15.3.3. Produtos.
+		15.3.4. Desconto.
+		15.3.5. Acréscimo.
+		15.3.6. Deve existir um método que receba um objeto cliente e adicione-o a propriedade cliente.
+		15.3.7. Deve ser possível adicionar n produtos, através de um método, que receba um objeto produto e uma quantidade,
+		e adicione-os na propriedade produtos.
+		15.3.8. Deve existir um método que retorne um objeto com as propriedades valor dos produtos, e valor total, sendo este,
+		a soma dos valores produtos, menos o desconto, mais o acréscimo.
+	</p>
+
+	<script>
+		var cliente = {
+  			nome: "Aline Vieira",
+  			sexo: "Feminino",
+  			dataNascimento: "11/07/1996",
+  			endereco: {
+    			logradouro: "Avenida Colombo",
+    			numero: "5790",
+    			complemento: "Apartamento 221",
+    			bairro: "Zona 07",
+    			cidade: "Maringa",
+    			estado: "Paraná",
+    			cep: "87020-900",
+  			},
+
+  			mostrarInformacoes: function() {
+				alert("Dados do Cliente:\n" + "\nNome: " + this.nome + "\nSexo: " + this.sexo + "\nData de Nascimento: " + this.dataNascimento + "\nEndereço: " + this.endereco.logradouro + ", "
+				+ this.endereco.numero + ", " + this.endereco.complemento + ", " + this.endereco.bairro + ", " + this.endereco.cidade + ", "
+    			+ this.endereco.estado + ", " + this.endereco.cep);
+			}
+		};
+		cliente.mostrarInformacoes();
+
+		var produto1 = {
+  			titulo: "Garrafa Termica Gatinho",
+  			descricao: "Garrafa térmica de aço inoxidável, 220ml, com formato de gatinho, na cor azul",
+  			valor: 28.88,
+  			mostrarInformacoes: function() {
+   			alert("Produto:\n" + "\nNome: " + this.titulo + "\nValor: R$ " + this.valor);
+  			}
+		};
+		produto1.mostrarInformacoes();
+
+		var produto2 = {
+  			titulo: "McNífico Bacon",
+  			descricao: "Uma fatia que faz a diferença",
+  			valor: 17.00,
+  			mostrarInformacoes: function() {
+    			alert("Produto:\n" + "\nNome: " + this.titulo + "\nValor: R$ " + this.valor);
+  			}
+		};
+
+		var produto3 = {
+  			titulo: "Coca Cola",
+  			descricao: "Mata a sua sede em um gole",
+  			valor: 9.00,
+  			mostrarInformacoes: function() {
+   			alert("Produto:\n" + "\nNome: " + this.titulo + "\nValor: R$ " + this.valor);
+  			}
+		};
+
+		var venda = {
+  			data: null,
+  			cliente: null,
+  			produtos: [],
+  			desconto: 5.00,
+  			acrescimo: 2.00,
+
+  			addCliente: function (cliente) {
+   			this.cliente = cliente;
+  			},
+
+  			addProduto: function(produto, quantidade) {
+   			produtoVendido = {
+      			quantidade: quantidade,
+      			produto: produto
+    			};
+   			this.produtos.push(produtoVendido);
+  			},
+
+			mostrarInformacoes: function () {
+   			variavelAux = 0;
+    			valorTotal = 0;
+    			this.produtos.forEach(function(item) {
+      			variavelAux += (item.produto.valor * item.quantidade);
+      			valorTotal = variavelAux + this.venda.acrescimo - this.venda.desconto;
+    			})
+    			string1 =  "Produtos: \n";
+    			this.produtos.forEach(function(item) {
+      			string1 += ("\n" + item.quantidade + "  " + item.produto.titulo + " R$ " + item.produto.valor);
+      			string2 = ("\n\nValor Total: \n" + valorTotal);
+      			string3 = ("\n\nAcrescimo: " + this.venda.acrescimo + " (Taxa de Entrega)\n");
+      			string4 = ("Desconto: " + this.venda.desconto + " (Cartão Fidelidade)");
+    			})
+    			alert(string1 + string2 + string3 + string4);
+  			}
+		}
+
+		venda.addCliente(cliente);
+		venda.addProduto(produto1,2);
+		venda.addProduto(produto2,4);
+		venda.addProduto(produto3,4);
+		venda.mostrarInformacoes();
+	</script>
+</body>
+</html>

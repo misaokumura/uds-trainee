@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercicio 05</title>
+    <style media="screen">
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .resultados {
+        display: flex;
+      }
+
+      .radioButtons {
+        display: flex;
+      }
+
+      #containerEnviar.disabled #blockEnviar {
+       display: block;
+      }
+     #containerEnviar.disabled #botao {
+       opacity: 0.5;
+      }
+     #containerEnviar #blockEnviar {
+       display: none;
+      }
+
+      #quadro {
+        display: flex;
+        flex-direction: column;
+        white-space: pre;
+      }
+
+      #formID {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #botao {
+        display: flex;
+        margin: 20px 0px 0px 0px;
+      }
+
+      #btnRecomecar {
+        display: flex;
+        margin: 10px 0px 0px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>05. Vamos criar nosso primeiro jogo! O usuário começa o jogo com 100 pontos.
+      Deve ser apresentado 2 radio buttons, com os valores par e impar, e um campo de texto valor da aposta.
+      Após selecionar preencher todos os campos, o usuário deve clicar em um botão jogar,
+      então o sistema deve sortear um número aleatório de 1 à 30, e verificar se este número é par ou impar.
+      Caso o número seja de acordo com o que o usuário apostou, deve-se somar a quantidade de pontos apostados
+      ao seus pontos globais, caso seja diferente deve-se subtrair este valor.
+      Não deve ser possível clicar no botão jogar:
+
+      Não deve ser aceito nada além de valores numéricos, maior que zero, no campo valor da aposta.
+      O sistema deve apresentar ao usuário qual número foi sorteado e informa-lo se o número é par ou impar.
+      Não deve ser possível clicar no botão jogar
+      Caso o usuário não possua ou tente apostar uma quantidade de pontos maior do que possui.
+      Caso o usuário não informe em qual tipo de número quer apostar.</p>
+    <form id="formID">
+      <div class="resultados">
+        <div class="">
+          Seus pontos:
+        </div>
+        <div id="pontos"></div>
+      </div>
+      <p>Digite a quantidade de pontos que quer apostar!</p>
+      <input type="text" name="" id="pontosApostados" value="" placeholder="Digite o valor da aposta...">
+      <p>Você acha que o número sorteado vai ser PAR ou IMPAR ?</p>
+      <div class="radioButtons">
+        <input type="radio" name="imparOuPar" value="" id="par">Par
+        <input type="radio" name="imparOuPar" value="" id="impar">Impar
+      </div>
+      <div class="opcao" id="containerEnviar">
+        <button type="button" name="button" id="botao">Jogar</button>
+        <div id="blockEnviar"></div>
+      </div>
+      <button type="button" name="button2" id="btnRecomecar">Recomeçar</button>
+      <div id="quadro">
+        Numero Sorteado: <div id="numeroAleatorio"></div>
+        Resultado: <div id="resultadoNumero"></div>
+      </div>
+    </form>
+
+
+    <script>
+      var pontos = 100;
+      document.getElementById("pontos").innerHTML = pontos;
+      document.getElementById("botao").addEventListener("click", apostar);
+      document.getElementById("btnRecomecar").addEventListener("click", recomecar);
+
+      var resultadoNumero;
+      function apostar() {
+        var valorAposta = parseInt(document.getElementById("pontosApostados").value);
+        var numAleatorio = Math.floor((Math.random() * 30) + 1);
+        if (valorAposta <= 0) {
+          alert("Você deve apostar apenas saldo positivo");
+          document.getElementById("quadro").style.display = "none";
+        } else if (valorAposta > pontos) {
+          alert("Você não pode apostar mais do que possui!");
+          document.getElementById("quadro").style.display = "none";
+        } else if ((document.getElementById("par").checked == false) && (document.getElementById("impar").checked == false)) {
+          alert("Você deve preencher os campos!");
+          document.getElementById("quadro").style.display = "none";
+        } else if ((numAleatorio % 2 == 0) && (document.getElementById("par").checked == true)) {
+          resultadoNumero = "Você acertou! O numero é par! Ganhou " + valorAposta + " pontos!";
+          pontos = valorAposta + pontos;
+        } else if ((numAleatorio % 2 !== 0) && (document.getElementById("impar").checked == true)) {
+          resultadoNumero = "Você acertou! O numero é impar! Ganhou " + valorAposta + " pontos!";
+          pontos += valorAposta;
+        } else {
+          resultadoNumero = "Você errou! Perdeu " + valorAposta + " pontos!";
+          pontos -= valorAposta;
+        }
+        document.getElementById("numeroAleatorio").innerHTML = numAleatorio;
+        document.getElementById("resultadoNumero").innerHTML = resultadoNumero;
+        document.getElementById("pontos").innerHTML = pontos;
+      }
+
+      function recomecar() {
+        window.location.reload();
+      }
+    </script>
+
+  </body>
+</html>

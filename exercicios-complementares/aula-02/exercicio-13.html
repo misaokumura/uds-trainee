@@ -1,0 +1,28 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 13</title>
+</head>
+
+<body>
+	<p>
+		13. Usando o objeto Date, crie um script que apresente a data no formato: dd/mm/aaaa.\
+	</p>
+
+	<script>
+		var data = new Date();
+		var dia  = data.getDate();
+		if (dia< 10) {
+   		dia  = "0" + dia;
+		}
+		var mes  = data.getMonth() + 1;
+		if (mes < 10) {
+   		mes  = "0" + mes;
+		}
+
+		var ano  = data.getFullYear();
+		dataFormatada = dia + "/" + mes + "/" + ano;
+		alert(dataFormatada);
+	</script>
+</body>
+</html>

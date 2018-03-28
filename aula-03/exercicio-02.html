@@ -1,0 +1,31 @@
+<html>
+<head>
+<title></title>
+<style>
+body {
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<p id="variavel">0</p>
+<button id="adicionar" type="button">ADICIONAR</button>
+<button id="subtrair" type="button">SUBTRAIR</button>
+
+<script>
+document.getElementById('adicionar').addEventListener("click", adicionaNumero);
+document.getElementById('subtrair').addEventListener("click", subtrairNumero);
+
+var valor=0;
+
+function adicionaNumero() {
+  document.getElementById('variavel').innerHTML=valor++;
+}
+
+function subtrairNumero() {
+  document.getElementById('variavel').innerHTML= valor--;
+}
+</script>
+</body>
+</html>

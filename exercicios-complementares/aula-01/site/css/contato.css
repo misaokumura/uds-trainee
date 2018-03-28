@@ -1,0 +1,119 @@
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  align-content: center;
+}
+
+form{
+  width: 500px;
+  border: 2px solid black;
+  padding: 1em;
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+form div{
+  margin-top:10px;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+textarea{
+  vertical-align: top;
+}
+
+input{
+  padding-top: 10px;
+}
+
+input, textarea{
+  width: 300px;
+  border: 1px solid #999;
+  font: 12px josefinSansBold;
+}
+
+.nomeFormulario {
+background-color: #000000;
+color: #bebebe;
+padding: 10px;
+border-radius: 15px;
+text-align: left;
+}
+
+.emailFormulario {
+  background-color: #000000;
+  color: #bebebe;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.mensagemFormulario {
+  background-color: #000000;
+  color: #bebebe;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.btnSubmit {
+  background-color: #000000;
+  color: #bebebe;
+  padding: 10px;
+  border-radius: 15px;
+  margin-top: 20px;
+  margin-left: 140px;
+  font: 12px josefinSansBold;
+}
+
+#campoNome {
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+#campoEmail{
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#campoMensagem {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.gif {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.gif img{
+  width: 125px;
+}
+
+.iconeSobre {
+  position: absolute;
+  right: 90px;
+  top: 570px;
+}
+
+.iconeContato {
+  position: absolute;
+  right: 20px;
+  top: 570px;
+}

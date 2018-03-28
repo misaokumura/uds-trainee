@@ -1,0 +1,55 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 12</title>
+<style>
+	body {
+  		white-space: pre;
+	}
+</style>
+</head>
+
+<body>
+	<p>
+		12. Para cada conjunto de valores abaixo, escreva o código, usando laço(s), que preencha um array com os valores:
+
+		12.1. 10 9 8 7 6 5 4 3 2 1.
+		12.2. 0 1 4 9 16 25 36 49 64 81 100.
+		12.3. 1 2 3 4 5 10 20 30 40 50.
+		12.4. 3 4 7 12 19 28 39 52 67 84.
+	</p>
+
+	<script>
+		var PrimeiroArray = [];
+		for (var i = 10; i >= 1 ; i--) {
+ 			PrimeiroArray.push(i);
+		}
+		alert(PrimeiroArray);
+
+
+		var segundoArray = [];
+		for (var i = 0; i <= 10; i++) {
+    		segundoArray.push(i * i);
+  		}
+    	alert(segundoArray);
+
+
+		var TerceiroArray = [];
+		for (var i = 1; i <= 5; i++) {
+  			TerceiroArray.push(i);
+		}
+		for (var i = 1; i <= 5; i++) {
+  			TerceiroArray.push(i * 10);
+  		}
+		alert(TerceiroArray);
+
+
+		var quartoArray = [];
+		for ( i=0; i <10; i++) {
+  			quartoArray.push(i*i+3);
+		}
+		alert(quartoArray);
+
+	</script>
+</body>
+</html>

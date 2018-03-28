@@ -1,0 +1,209 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+
+  <title>Aula 02</title>
+</head>
+<body>
+  <script>
+
+  /* Exercicio 01
+    alert('Hello World!');
+  */
+
+/*Exercicio 02
+  var nomeA = "Aline";
+  var nomeB = Aline;
+  alert(nomeA + " " + nomeB);
+*/
+
+  /*Exercicio 03
+    var nome = "Aline Maria Vieira da Silva";
+    var idade = 21;
+    var sexoFeminino = true;
+    var peso = 56.600;
+    console.log(nome, idade, sexoFeminino, peso);
+    alert(" Olá, seu nome é " + nome + " você tem " + idade + " anos! ");
+  */
+
+/* Exercicio 04
+    var idade = 21;
+
+    if (idade <= 18) {
+    alert('Novinha');
+  }
+    else if (idade <= 30) {
+      alert('Tiazinha');
+    }
+    else {
+      alert('Tiazona)')
+    }
+*/
+
+/* Exercicio 05
+      var dia;
+  switch (new Date().getDay()) {
+      case 0:
+          dia = "Domingo";
+          break;
+      case 1:
+          dia = "Segunda-Feira";
+          break;
+      case 2:
+          dia = "Terça-Feira";
+          break;
+      case 3:
+          dia = "Quarta-Feira";
+          break;
+      case 4:
+          dia = "Quinta-Feira";
+          break;
+      case 5:
+          dia = "Sexta-feira";
+          break;
+      case 6:
+          dia = "Sábado";
+          break;
+  }
+  alert(" Salve Tiazona, hoje é " + dia + ", dia de?");
+  */
+
+/* Exercicio 06
+  function converteNumero(numero) {
+  switch (numero) {
+    case 1 :
+        alert('I');
+        break;
+    case 2:
+        alert('II');
+        break;
+    case 3:
+        alert('III');
+        break;
+    case 4:
+        alert('IV');
+        break;
+    case 5:
+        alert('V');
+        break;
+    case 6:
+        alert('VI');
+        break;
+    case 7:
+        alert('VII');
+        break;
+    case 8:
+        alert('VIII');
+        break;
+    case 9:
+        alert('IX');
+        break;
+    case 10:
+        alert('X');
+        break;
+    default:
+    alert('Número Inválido!');
+    break;
+  }
+}
+
+var scanner = parseInt (prompt ("Digite um número de 1 a 10 " ));
+converteNumero (scanner);
+*/
+/* ou */
+/*
+function converteNumero(numero) {
+switch (numero) {
+  case 1 :
+      return 'I';
+  case 2:
+      return 'II';
+  case 3:
+      return 'III';
+  case 4:
+      return 'IV';
+  case 5:
+      return 'V';
+  case 6:
+      return 'VI';
+  case 7:
+      return 'VII';
+  case 8:
+      return 'VIII';
+  case 9:
+      return 'IX';
+  case 10:
+      return 'X';
+  default:
+      return 'Número Inválido!';
+}
+}
+*/
+
+/* Exercicio 07
+for ( var i = 1; i <= 10; i++) {
+        converteNumero(i);
+}
+*/
+
+/*
+for (var i = 10; i >= 1 ; i--) {
+ converteNumero(i);
+}
+*/
+
+/* Exercicio 08
+var i = 1;
+while (i <= 10) {
+  converteNumero(i);
+  i++
+}
+*/
+
+/*Exercicio 09
+var dadosPessoaisAline = ["Aline", ["Avenida Colombo", "5790", "Centro", "Maringa"], "(44) 99999-9999"];
+console.log(dadosPessoaisAline);
+dadosPessoaisAline[0] = "Aline Maria Vieira da Silva";
+console.log(dadosPessoaisAline);
+dadosPessoaisAline.splice(2, 1);
+console.log(dadosPessoaisAline);
+*/
+/* ou */
+/*
+var meuArray = [];
+var nome = 'Aline';
+meuArray.push(nome);
+var enredeco = [];
+var cep = '87660-000';
+enredeco.push(cep);
+var logradouro = 'rua da minha casa';
+enredeco.push(logradouro);
+var numero = '1114';
+enredeco.push(numero);
+meuArray.push(enredeco);
+var telefone = '99 999-999-999';
+meuArray.push(telefone );
+meuArray[0] = 'Aline Vieira';
+meuArray.splice(2, 1);
+*/
+
+/* Exercicio 10
+var dadosPessoais = {
+  nome: "Aline",
+  sobrenome: "Vieira",
+  endereco: {
+    rua: "Avenida Colombo",
+    numero: "5790",
+    bairro: "Centro",
+    cidade: "Maringa",
+  },
+  showInfo: function() {
+    alert(" Seu nome é " + this.nome + " " + this.sobrenome + ", \n residente em " + this.endereco.rua + " " + this.endereco.numero + " " + this.endereco.bairro + " " + this.endereco.cidade);
+  }
+};
+dadosPessoais.showInfo();
+console.log(dadosPessoais);
+*/
+  </script>
+</body>
+</html>

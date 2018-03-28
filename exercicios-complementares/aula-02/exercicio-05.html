@@ -1,0 +1,24 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 05</title>
+</head>
+
+<body>
+	<p>
+		5. Escreva uma função para ler uma temperatura em graus Fahrenheit, calcular e alertar o valor correspondente em graus Celsius.
+			A temperatura deve ser inputada pelo usuário, via prompt.
+	</p>
+
+	<script>
+  		function temperatureConverter(fahrenhreit) {
+    		return (fahrenhreit - 32) / 1.8;
+  		}
+
+  		var fahrenheit = prompt("Digite a temperatura em Fahrenheit: ");
+  		var temperaturaEmCelsius = temperatureConverter(fahrenheit);
+  		alert(temperaturaEmCelsius);
+	</script>
+
+</body>
+</html>

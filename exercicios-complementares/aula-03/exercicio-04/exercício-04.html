@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 04</title>
+    <style media="screen">
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        white-space: pre-line;
+      }
+
+      .opcao {
+        display: flex;
+        justify-content: center;
+      }
+
+      #containerEnviar.disabled #blockEnviar {
+        display: block;
+      }
+
+      #containerEnviar.disabled #botao {
+        opacity: 0.5;
+      }
+
+      #containerEnviar #blockEnviar {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <p>04. Crie um formulário com 10 questões de verdadeiro ou falso.
+      O usuário deve preencher um formulário com as questões, cada questão deve ter dois radio buttons com as respostas possíveis.
+      Ao final do formulário deve existir um botão enviar. Ao clicar no botão deve-se validar as questões,
+      para cada resposta preenchida corretamente deve-se somar 1 ponto, para cada resposta errada ou
+      em branco deve-se somar 0 pontos, e então apresentar a pontuação ao usuário.</p>
+
+    <form id="formID">
+      <label for="1">01. A lagoa azul foi o filme mais reprisado da TV globo?</label>
+      <div class="opcao">
+        <input type="radio" name="questao01" value="" >Verdadeiro
+        <input type="radio" name="questao01" value="" id="1">Falso
+      </div>
+
+      <label for="2">02. Comer manga e tomar leite faz mal?</label>
+      <div class="opcao">
+        <input type="radio" name="questao02" value="" >Verdadeiro
+        <input type="radio" name="questao02" value="" id="2">Falso
+      </div>
+
+      <label for="3">03. O Bailão é bonito?</label>
+      <div class="opcao">
+        <input type="radio" name="questao03" value="" id="3">Verdadeiro
+        <input type="radio" name="questao03" value="" >Falso
+      </div>
+
+      <label for="4">04. Bocejo é contagioso?</label>
+      <div class="opcao">
+        <input type="radio" name="questao04" value="" id="4">Verdadeiro
+        <input type="radio" name="questao04" value="" >Falso
+      </div>
+
+      <label for="5">05. Alcool esquenta o corpo?</label>
+      <div class="opcao">
+        <input type="radio" name="questao05" value="" >Verdadeiro
+        <input type="radio" name="questao05" value="" id="5">Falso
+      </div>
+
+      <label for="6">06. Amendoins são um dos ingredientes de dinamite?</label>
+      <div class="opcao">
+        <input type="radio" name="questao06" value="" id="6">Verdadeiro
+        <input type="radio" name="questao06" value="" >Falso
+      </div>
+
+      <label for="7">07. Nunca se deve despertar um sonambulo?</label>
+      <div class="opcao">
+        <input type="radio" name="questao07" value="" >Verdadeiro
+        <input type="radio" name="questao07" value="" id="7">Falso
+      </div>
+
+      <label for="8">08. Jogar de Yasuo é câncer?</label>
+      <div class="opcao">
+        <input type="radio" name="questao08" value="" id="8">Verdadeiro
+        <input type="radio" name="questao08" value="" >Falso
+      </div>
+
+      <label for="9">09. Deadpool é o melhor personagem da DC?</label>
+      <div class="opcao">
+        <input type="radio" name="questao09" value="" >Verdadeiro
+        <input type="radio" name="questao09" value="" id="9">Falso
+      </div>
+
+      <label for="10">10. Não arrumar a cama faz bem para saúde?</label>
+      <div class="opcao">
+        <input type="radio" name="questao10" value="" id="10">Verdadeiro
+        <input type="radio" name="questao10" value="" >Falso
+      </div>
+
+      <div class="opcao" id="containerEnviar">
+        <button type="button" name="button" id="botao">Enviar</button>
+        <div id="blockEnviar"></div>
+      </div>
+
+      <div class="opcao">
+        <button type="button" name="button2" id="btnRecomecar">Recomeçar</button>
+      </div>
+    </form>
+    Resultado: <p id="resultado"></p>
+
+    <script type="text/javascript">
+      document.getElementById("botao").addEventListener("click", mostrar);
+      document.getElementById("btnRecomecar").addEventListener("click", recomecar);
+
+      var formID = document.getElementById("formID");
+      var botao = document.getElementById("botao");
+      var contador = 0;
+
+      var mostrar = function (event) {
+        for (var i = 1; i <=10; i++) {
+          if (document.getElementById(i).checked === true) {
+            contador++;
+          }
+        }
+        document.getElementById("resultado").innerHTML = contador;
+        if (formID.checkValidity()) {
+          event.target.parentNode.classList.add("disabled");
+          event.target.removeEventListener("click", mostrar);
+        }
+      }
+      botao.addEventListener("click", mostrar);
+
+      function recomecar() {
+        window.location.reload();
+      }
+    </script>
+
+  </body>
+</html>

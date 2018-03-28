@@ -1,0 +1,14 @@
+git config --global user.email "misaokumura.in@gmail.com"
+git config --global user.user.name "misaokumura"
+
+git init
+git remote add origin "link do repositorio no github"
+
+git status
+git add .
+git commit -m "mensagem referente a altera��o"
+git push origin master
+
+
+https://gist.github.com/julianobailao
+https://gist.github.com/julianobailao/c8660155a9af759dea5dfe389b29dad4

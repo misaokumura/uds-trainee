@@ -1,0 +1,35 @@
+<html>
+<head>
+<title></title>
+<style>
+.conteudo {
+  text-align: center;
+  white-space: pre;
+}
+
+ #imagem {
+  width: 500px;
+  height: 500px;
+}
+</style>
+</head>
+<body>
+
+<div class="conteudo">
+<img id="imagem" src="../aula-03/nanjoom.jpg">
+<button id="botao" type="button">CLIQUE AQUI</button>
+</div>
+<script>
+document.getElementById("botao").addEventListener("click", esconderImagem);
+
+function esconderImagem() {
+  var display = document.getElementById("imagem").style.display;
+
+    if(display == "none")
+            document.getElementById("imagem").style.display = 'block';
+        else
+            document.getElementById("imagem").style.display = 'none';
+}
+</script>
+</body>
+</html>

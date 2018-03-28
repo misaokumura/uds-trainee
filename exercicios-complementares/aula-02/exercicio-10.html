@@ -1,0 +1,25 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 10</title>
+</head>
+
+<body>
+	<p>
+		10. Escreva uma função que leia 10 valores numéricos, via input, e armazene-os num array.
+	</p>
+
+	<script>
+		var meuArrayBonitao = [];
+
+		function armazenarArray(meuArrayBonitao) {
+  			for (var i = 1; i <= 10; i++) {
+    			meuArrayBonitao.push(prompt("Digite o "+ i +"º numero: "));
+  			}
+   		alert(meuArrayBonitao);
+			}
+			armazenarArray(meuArrayBonitao);
+			console.log(meuArrayBonitao);
+	</script>
+</body>
+</html>

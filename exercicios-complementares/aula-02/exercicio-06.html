@@ -1,0 +1,40 @@
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Exercício 06</title>
+<style>
+	body {
+  		white-space: pre;
+	}
+</style>
+</head>
+
+<body>
+	<p>
+		6. Escreva uma função para calcular e alertar o número de lâmpadas necessárias para iluminar um determinado cômodo de uma residência.
+
+		6.1. Dados de entrada:
+		6.1.1. A potência da lâmpada utilizada (em watts)
+		6.1.2. As dimensões (largura e comprimento, em metros) do cômodo.
+
+		6.2. Considere que a potência necessária é de 18 watts por metro quadrado.
+
+		Obs: As entradas devem ser inputadas via prompt e nãp devem aceitar valores não numéricos.
+	</p>
+
+	<script>
+		var potLamp = prompt("Digite a potência da lâmpada em Watts: ");
+		var largComodo = prompt("Digite a largura do comodo em metros: ");
+		var compComodo = prompt("Digite o comprimento do comodo em metros: ");
+		var resultado = calcularQuantLamp(potLamp, largComodo, compComodo);
+		alert(resultado);
+
+		function calcularQuantLamp(potLamp, largComodo, compComodo) {
+  			var areaComodo = largComodo * compComodo;
+  			var potNecessaria = areaComodo * 18;
+  			numLamp = potNecessaria / potLamp;
+  				return numLamp;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 02</title>
+    <link rel="stylesheet" href="css/exercício-02.css">
+  </head>
+  <body>
+    <p> Crie um arquivo html com 10 divs e 1 botão.
+      As divs devem ser circulos vermelhos posicionadas lado a lado via flex-box.
+      Ao clicar no botão o sistema deve calcular um número aleatório de 1 a 10 e pintar a div correspondente de azul.
+      Ao clicar novamente, o sistema deve voltar todas as divs para vermelho e realizar a operação anterior novamente.</p>
+
+      <div class="container">
+        <div class="box-1" id="1"></div>
+        <div class="box-2" id="2"></div>
+        <div class="box-3" id="3"></div>
+        <div class="box-4" id="4"></div>
+        <div class="box-5" id="5"></div>
+        <div class="box-6" id="6"></div>
+        <div class="box-7" id="7"></div>
+        <div class="box-8" id="8"></div>
+        <div class="box-9" id="9"></div>
+        <div class="box-10" id="10"></div>
+      </div>
+
+      <div class="botao">
+        <button type="button" name="button" id="botao">Não aperte esse botão</button>
+      </div>
+
+      <script type="text/javascript">
+        document.getElementById("botao").addEventListener("click", numeroAleatorio);
+
+        function numeroAleatorio() {
+          var x = Math.floor((Math.random() * 10) + 1);
+          var contador = 0;
+          for (var i = 1; i <= 10; i++) {
+            if (document.getElementById(i).style.backgroundColor === "blue") {
+              contador++;
+            }
+          }
+          if (contador >= 1) {
+            window.location.reload();
+          } else {
+            document.getElementById(x).style.backgroundColor = "blue";
+          }
+        }
+      </script>
+      
+  </body>
+</html>
