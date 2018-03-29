@@ -1,8 +1,8 @@
 {
   "name": "meu-projeto-vue",
   "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "Gustavo <guskamoto@gmail.com>",
+  "description": "Exercicios aula 03",
+  "author": "Misa misaokumura.in@gmail.com",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

@@ -1,6 +1,6 @@
 # meu-projeto-vue
 
-> A Vue.js project
+> Exercicios aula 03
 
 ## Build Setup
 
