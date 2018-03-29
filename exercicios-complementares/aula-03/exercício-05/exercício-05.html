@@ -105,12 +105,15 @@
         if (valorAposta <= 0) {
           alert("Você deve apostar apenas saldo positivo");
           document.getElementById("quadro").style.display = "none";
+          document.getElementById("botao").disabled=true;
         } else if (valorAposta > pontos) {
           alert("Você não pode apostar mais do que possui!");
           document.getElementById("quadro").style.display = "none";
+          document.getElementById("botao").disabled=true;
         } else if ((document.getElementById("par").checked == false) && (document.getElementById("impar").checked == false)) {
           alert("Você deve preencher os campos!");
           document.getElementById("quadro").style.display = "none";
+          document.getElementById("botao").disabled=true;
         } else if ((numAleatorio % 2 == 0) && (document.getElementById("par").checked == true)) {
           resultadoNumero = "Você acertou! O numero é par! Ganhou " + valorAposta + " pontos!";
           pontos = valorAposta + pontos;
